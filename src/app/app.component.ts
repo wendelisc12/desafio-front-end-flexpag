@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { VeiculoDetalhes } from './models/VeiculoDetalhes';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'flexpag';
+  
+  valorVeiculo: string = ''
+  detalhesDoVeiculo:VeiculoDetalhes[] = []
+  results = false
+  
+  getResults(showResults:boolean){
+    this.results = showResults
+  }
+
+  getValorVeiculoInfo(valorVeiculoInfo:string){
+    this.valorVeiculo = valorVeiculoInfo
+  }
+  getDetalhesVeiculo(veiculoDetalhes: VeiculoDetalhes[]){
+    this.detalhesDoVeiculo = veiculoDetalhes
+  }
+
+  
+
+  constructor(){
+
+  }
+  
 }

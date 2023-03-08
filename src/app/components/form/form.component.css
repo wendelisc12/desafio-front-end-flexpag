@@ -1,0 +1,9 @@
+@media (max-width: 600.98px) {
+    .select-box{
+        flex-direction: column !important;
+    }
+
+    .select-group{
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,50 @@
+<div class="mt-5">
+    <div class="d-flex justify-content-between select-box">
+        <div class="select-group d-flex flex-column justify-content-center w-100 mr-3">
+            <label for="veiculo">Tipo do veículo</label>
+            <select class="custom-select" [(ngModel)]="selectedVeiculo" (change)="obterMarcas()" id="veiculo">
+                <option selected disabled>Selecione o veículo</option>
+                <option value="carros">Carros</option>
+                <option value="motos">Motos</option>
+                <option value="caminhoes">Caminhões</option>
+            </select>
+        </div>
+
+        <div class="select-group d-flex flex-column justify-content-center w-100 mr-3">
+            <label for="marca">Marca</label>
+            <select class="custom-select" [(ngModel)]="selectedMarca" (change)="obterModelos()"
+                [disabled]=activeMarca id="marca">
+                <option selected disabled>Selecione a marca</option>
+                <option *ngFor="let marca of veiculos" value={{marca.codigo}}>{{marca.nome}}</option>
+            </select>
+        </div>
+
+        <div class="select-group d-flex flex-column justify-content-center  w-100 mr-3">
+            <label for="modelo">Modelo</label>
+            <select class="custom-select" [(ngModel)]="selectedModelo" (change)="obterAno()"
+                [disabled]=activeModelo id="modelo">
+                <option selected disabled>Selecione o modelo</option>
+                <option *ngFor="let modelo of veiculoModelos" value={{modelo.codigo}}>{{modelo.nome}}</option>
+            </select>
+        </div>
+
+        <div class="select-group d-flex flex-column justify-content-center w-100">
+            <label for="ano">Ano</label>
+            <select class="custom-select" [(ngModel)]="selectedAno" [disabled]=activeAno id="ano">
+                <option selected disabled>Selecione o ano</option>
+                <option *ngFor="let ano of veiculoAno" value={{ano.codigo}}>{{ano.nome}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="d-flex">
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">R$</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Ex: 160.121,21" maxlength="10" [(ngModel)]="valorVeiculo">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" (click)="enviar()">Consultar</button>
+            </div>
+        </div>
+    </div>
+</div>

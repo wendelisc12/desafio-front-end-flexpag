@@ -1,0 +1,34 @@
+h1{
+    font-size: 4rem;
+}
+
+h5{
+    margin-bottom: 15px;
+}
+
+span{
+    color: rgb(100, 100, 100);
+    margin-left: 10px;
+}
+
+#results-box{
+    background-color: rgb(240, 240, 240);
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(155, 155, 155, 0.24);
+}
+
+#results-1{
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 600.98px) {
+    #results-box{
+        flex-direction: column !important;
+    }
+
+    #results-1{
+        margin: 0 !important;
+        margin-bottom: 10px !important;
+    }
+}

@@ -1,0 +1,26 @@
+<div class="mt-4 d-flex justify-content-center p-5" id="results-box"  *ngFor="let veiculo of veiculoDetalhes">
+    <div class=" p-3 mr-5" id="results-1">
+        <div>
+            <h5>Marca: <span>{{veiculo.marca}}</span></h5>
+            <h5>Modelo: <span>{{veiculo.modelo}}</span></h5>
+            <h5>Ano do modelo: <span>{{veiculo.anoModelo}}</span></h5>
+        </div>
+
+        <div>
+            <h5>Código FIPE: <span>{{veiculo.codigoFipe}}</span></h5>
+            <h5>Mês referência: <span>{{veiculo.mesReferencia}}</span></h5>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column align-items-center">
+        <div>
+            <h5>Valor do veículo: <span>R$ {{valorDoVeiculo}}</span></h5>
+            <h5>Valor pela FIPE: <span>R$ {{veiculo.valor}}</span></h5>
+        </div>
+
+        <div class="border border-danger rounded w-100 h-100 d-flex align-items-center justify-content-center flex-column bg-light">
+            <h6 class="text-danger">{{textoResults}}:</h6>
+            <h1 class="text-danger">{{percentualResults}}%</h1>
+        </div>
+    </div>
+</div>
